@@ -45,3 +45,21 @@ var APP = APP || {};
 	});
 
 })();
+
+
+// ROUTIE
+routie({
+
+	'/schedule': function() {
+		console.log('Schedule called');
+	},
+
+	'/ranking': function() {
+		console.log('Ranking called');
+	},
+
+	'/game': function() {
+		console.log('Game called');
+	}
+
+});
