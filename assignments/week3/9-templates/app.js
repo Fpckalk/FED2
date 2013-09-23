@@ -74,8 +74,8 @@ var APP = APP || {};
 
 		change: function () {
             var route = window.location.hash.slice(2),
-                sections = qwery('section[data-route]'),
-                section = qwery('[data-route=' + route + ']')[0];  
+            	sections = qwery('section[data-route]'),
+            	section = qwery('[data-route=' + route + ']')[0];  
 
             // Show active section, hide all other
             if (section) {
@@ -83,12 +83,12 @@ var APP = APP || {};
             		sections[i].classList.remove('active');
             	}
             	section.classList.add('active');
-            }
+			}
 
-            // Default route
-            if (!route) {
+			// Default route
+			if (!route) {
             	sections[0].classList.add('active');
-            }
+			}
 
 		}
 
