@@ -1,7 +1,7 @@
-article > section {
+article {
 	display: none;
 }
 
-article > section.active {
+article.active {
 	display: block;
 }

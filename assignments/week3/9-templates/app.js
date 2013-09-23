@@ -74,20 +74,20 @@ var APP = APP || {};
 
 		change: function () {
             var route = window.location.hash.slice(2),
-            	sections = qwery('section[data-route]'),
-            	section = qwery('[data-route=' + route + ']')[0];  
+            	articles = qwery('article[data-route]'),
+            	article = qwery('[data-route=' + route + ']')[0];  
 
-            // Show active section, hide all other
-            if (section) {
-            	for (var i=0; i < sections.length; i++){
-            		sections[i].classList.remove('active');
+            // Show active article, hide all other
+            if (article) {
+            	for (var i=0; i < articles.length; i++){
+            		articles[i].classList.remove('active');
             	}
-            	section.classList.add('active');
+            	article.classList.add('active');
 			}
 
 			// Default route
 			if (!route) {
-            	sections[0].classList.add('active');
+            	articles[0].classList.add('active');
 			}
 
 		}
