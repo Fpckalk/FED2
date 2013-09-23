@@ -18,7 +18,7 @@
 		</nav>
 	</header>
 
-	<article data-route="schedule" class="active">
+	<article data-route="schedule">
 
 		<section>
 			
@@ -46,6 +46,27 @@
 			
 			<h1 data-bind="title"></h1>	
 			<p data-bind="description"></p>
+			<table>
+				
+				<thead>
+					<tr>
+						<th>Score</th>
+						<th>Team</th>
+						<th>Points</th>
+						<th>Team</th>
+					</tr>
+				</thead>
+
+				<tbody data-bind="gameInfo">
+					<tr>
+						<td data-bind="team1Score"></td>
+						<td data-bind="team1"></td>
+						<td data-bind="team2Score"></td>
+						<td data-bind="team2"></td>
+					</tr>
+				</tbody>
+
+			</table>
 				
 		</section>
 
