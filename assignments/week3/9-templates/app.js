@@ -1,6 +1,6 @@
 /*
 
-Description about the template app
+A basic framework skeleton
 
 */
 
@@ -8,6 +8,9 @@ var APP = APP || {};
 
 (function() {
 
+	/* Initiate all the functions you want to start when
+	 * everything has finished loading.
+	*/
 	APP.controller = {
 
 		init: function() {
@@ -15,6 +18,8 @@ var APP = APP || {};
 		}
 
 	}
+
+	// Apply data to the different 'pages'
 
 	APP.schedule = {
 		title: 'Schedule',
@@ -34,9 +39,13 @@ var APP = APP || {};
 	}
 
 
-		// ROUTIE
+	// ROUTIE
 	APP.router = {
 
+		/* The functionality of Routie lies in that it can differentiate links
+		 * and add functions to the links called.
+		 * Thus you can 'switch' pages without using another request.
+		*/
 		init: function() {
 			routie({
 
@@ -61,7 +70,7 @@ var APP = APP || {};
 
 	};
 
-
+	////////////////////// This is a well commented line
 	domready(function() {
 		APP.controller.init();
 	});
