@@ -11,55 +11,59 @@ var APP = APP || {};
 	APP.controller = {
 
 		init: function() {
-			APP.schedule.init();
-			APP.ranking.init();
-			APP.game.init();
+			APP.router.init();
 		}
 
 	}
 
 	APP.schedule = {
-
-		init: function() {
-			console.log('Schedule\'s up');
-		}
-
+		title: 'Schedule',
+		description: 'This is the schedule.'
 	},
 
 	APP.ranking = {
 
-		init: function() {
-			console.log('Ranking\'s up');
-		}
+		title: 'Ranking',
+		description: 'This is the ranking.'
 
 	},
 
 	APP.game = {
-		init: function() {
-			console.log('Game\'s up');
-		}
+		title: 'Game',
+		description: 'This is the game.'
 	}
+
+
+		// ROUTIE
+	APP.router = {
+
+		init: function() {
+			routie({
+
+				'/schedule': function() {
+					console.log('Schedule called');
+				},
+
+				'/ranking': function() {
+					console.log('Ranking called');
+				},
+
+				'/game': function() {
+					console.log('Game called');
+				},
+
+				'*': function() {
+					console.log('Catch-all called');
+				}
+
+			});
+		}
+
+	};
+
 
 	domready(function() {
 		APP.controller.init();
 	});
 
 })();
-
-
-// ROUTIE
-routie({
-
-	'/schedule': function() {
-		console.log('Schedule called');
-	},
-
-	'/ranking': function() {
-		console.log('Ranking called');
-	},
-
-	'/game': function() {
-		console.log('Game called');
-	}
-
-});
