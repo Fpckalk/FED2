@@ -1,0 +1,1134 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fu",
+				"fun	Function"
+			],
+			[
+				"star",
+				"startInterval"
+			],
+			[
+				"menu",
+				"menuOffset"
+			],
+			[
+				"Raleway",
+				"Raleway-Light"
+			],
+			[
+				"tabl",
+				"table-cell"
+			],
+			[
+				"page",
+				"pageID"
+			],
+			[
+				"posts",
+				"posts_per_page"
+			],
+			[
+				"the",
+				"the_ID"
+			],
+			[
+				"the_post",
+				"the_post"
+			],
+			[
+				"acteurs",
+				"acteurs_selectie"
+			],
+			[
+				"get_style",
+				"get_stylesheet_directory_uri"
+			],
+			[
+				"func",
+				"function_exists"
+			],
+			[
+				"method",
+				"method_exists"
+			],
+			[
+				"arr",
+				"array	$… = array (…)"
+			],
+			[
+				"th_slide",
+				"th_slideshow_link"
+			],
+			[
+				"event_loc",
+				"event_location_city"
+			],
+			[
+				"event_locatio",
+				"event_location_street"
+			],
+			[
+				"on",
+				"onAnimationWildEnd"
+			],
+			[
+				"onAn",
+				"onAnimationSlowEnd"
+			],
+			[
+				"webkit",
+				"webkit-keyframes"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"ini",
+				"initHeight"
+			],
+			[
+				"anim",
+				"animating"
+			],
+			[
+				"ani",
+				"animating"
+			],
+			[
+				"bli",
+				"blindHeight"
+			],
+			[
+				"onRopeD",
+				"onRopeDragUp"
+			],
+			[
+				"onRope",
+				"onRopeSwipe"
+			],
+			[
+				"section",
+				"section-content"
+			],
+			[
+				"featur",
+				"featuredHeight"
+			],
+			[
+				"feature",
+				"featured_img_src"
+			],
+			[
+				"wp_get_atta",
+				"wp_get_attachment_image_src"
+			],
+			[
+				"featu",
+				"featured_img"
+			],
+			[
+				"image_resi",
+				"image_resize_dimensions"
+			],
+			[
+				"img",
+				"img_rs"
+			],
+			[
+				"remove",
+				"removeSuccess"
+			],
+			[
+				"remov",
+				"removeSuccess"
+			],
+			[
+				"get_post_thum",
+				"get_post_thumbnail_id"
+			],
+			[
+				"get_post_thumbnail",
+				"get_the_post_thumbnail"
+			],
+			[
+				"post",
+				"_POST"
+			],
+			[
+				"permal",
+				"permalink-post"
+			],
+			[
+				"perma",
+				"permalink-field"
+			],
+			[
+				"is_arch",
+				"is_archive"
+			],
+			[
+				"uitg",
+				"uitgelichte_video"
+			],
+			[
+				"video",
+				"video_onderschrift"
+			],
+			[
+				"padding",
+				"padding"
+			],
+			[
+				"sideba",
+				"sidebar-title"
+			],
+			[
+				"side",
+				"sidebar-title"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"get_pos",
+				"get_post_permalink"
+			],
+			[
+				"BIOG",
+				"biography"
+			],
+			[
+				"is_n",
+				"is_null"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"is_ar",
+				"is_archive"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"menu-",
+				"current-menu-item"
+			],
+			[
+				"array",
+				"array"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"block-",
+				"block-post-wrapper"
+			],
+			[
+				"late",
+				"latest_posts"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"searc",
+				"search-button"
+			],
+			[
+				"search",
+				"search-form"
+			],
+			[
+				"hea",
+				"head	Tag"
+			],
+			[
+				"i",
+				"pointer"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"demo-text-box",
+				"demo-text-box-bg"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"docu",
+				"documentElement"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"borde",
+				"border"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"border-ra",
+				"border-radius"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"border-radi",
+				"border-bottom-right-radius"
+			],
+			[
+				"webkit-",
+				"webkit-transform"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"h",
+				"h2"
+			],
+			[
+				"mysql_fetch",
+				"mysql_fetch_assoc"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"_se",
+				"_SESSION"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"gebruike",
+				"gebruikersnaam"
+			],
+			[
+				"req",
+				"REQUEST_METHOD"
+			],
+			[
+				"regi",
+				"registreer_wachtwoord"
+			],
+			[
+				"regist",
+				"registreer_email"
+			],
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"login",
+				"login_registreer"
+			],
+			[
+				"regis",
+				"registreer_email"
+			],
+			[
+				"registr",
+				"registreer_wachtwoord"
+			],
+			[
+				"reg",
+				"registreer_email"
+			],
+			[
+				"woord",
+				"woord"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "assignments/week3/9-templates/index.html",
+			"settings":
+			{
+				"buffer_size": 883,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "assignments/week3/9-templates/app.js",
+			"settings":
+			{
+				"buffer_size": 710,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 196.0,
+		"selected_items":
+		[
+			[
+				"enabl",
+				"Package Control: Enable Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"list pa",
+				"Package Control: List Packages"
+			],
+			[
+				"packa",
+				"Package Control: Enable Package"
+			],
+			[
+				"package",
+				"Package Control: Enable Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Discover Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package list",
+				"Package Control: List Packages"
+			],
+			[
+				"syntax php",
+				"Set Syntax: PHP"
+			],
+			[
+				"syntax html",
+				"Set Syntax: HTML"
+			],
+			[
+				"synta html",
+				"Set Syntax: HTML"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Enable Package"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week3/9-templates/app.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week3/9-templates/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week3/8-router/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week3/7-basic-app-skeleton/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week3/score-app-skeleton/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week3/8-router/app.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week3/6-breakdown/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week3/7-basic-app-skeleton/app.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week2/5.4-finish-up/app.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week3/score-app-skeleton/app.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week3/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week2/5.4-finish-up/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week2/5.1-name-space/functions.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/4.2-create-objects/functions.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week2/5.1-name-space/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/4.2-create-objects/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/1.1-no-jquery/test.md",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/2.1-constructor-object/functions.js",
+		"/C/xampp/htdocs/git/repos/FED2/Les 2/Les2.md",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/4.1-breakdown-script/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/3.3-closure/functions.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/3.3-closure/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/3.2-global-scope/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/3.2-global-scope/functions.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/3.1-local-scope/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/3.1-local-scope/functions.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/2.3-object-literal/functions.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/2.3-object-literal/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/2.2-prototype/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/2.2-prototype/functions.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/2.1-constructor-object/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/1.1-no-jquery/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/Les 1/Lesopdrachten/Antwoorden/opdracht 4.2.js",
+		"/C/xampp/htdocs/git/repos/FED2/Les 1/Lesopdrachten/Antwoorden/opdracht 3.3.js",
+		"/C/xampp/htdocs/git/repos/FED2/Les 1/Lesopdrachten/Antwoorden/opdracht 3.2.js",
+		"/C/xampp/htdocs/git/repos/FED2/Les 1/Lesopdrachten/JavaScriptOOP/4-Scope/static/js/alien.js",
+		"/C/xampp/htdocs/git/repos/FED2/Les 1/Lesopdrachten/Antwoorden/opdracht 3.1.js",
+		"/C/xampp/htdocs/git/repos/FED2/Les 1/Lesopdrachten/JavaScriptOOP/3-ObjectLiteral/static/js/alien.js",
+		"/C/xampp/htdocs/git/repos/FED2/Les 1/Lesopdrachten/JavaScriptOOP/2-Prototype/static/js/alien.js",
+		"/C/xampp/htdocs/git/repos/FED2/Les 1/Lesopdrachten/JavaScriptOOP/1-ObjectConstructor/static/js/alien.js",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/no-jquery/index.html",
+		"/C/xampp/htdocs/git/repos/FED2/assignments/week1/no-jquery.html",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/index.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/1030up.css",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/style.css",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/base.css",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/functions.js",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/tpl-form.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/481up.css",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/mail.php",
+		"/C/xampp/htdocs/stomp/css/1030up.css",
+		"/C/xampp/htdocs/stomp/css/style.css",
+		"/C/xampp/htdocs/stomp/css/base.css",
+		"/C/xampp/htdocs/stomp/index.php",
+		"/C/xampp/htdocs/stomp/css/481up.css",
+		"/C/xampp/htdocs/stomp/js/functions.js",
+		"/C/xampp/htdocs/stomp/css/reset.css",
+		"/C/xampp/htdocs/stomp/index.html",
+		"/C/Users/Frank/Desktop/vmi-transfer/footer.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/app.js",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/footer.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/app 2.js",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/custom.js",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/header.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/functions.php",
+		"/C/xampp/htdocs/git/repos/gamergeeks/trunk/wp-content/themes/gamergeeks/library/scss/_base.scss",
+		"/C/xampp/htdocs/git/repos/gamergeeks/trunk/wp-content/themes/gamergeeks/library/bones.php",
+		"/C/xampp/htdocs/git/repos/gamergeeks/trunk/wp-content/themes/gamergeeks/header.php",
+		"/C/xampp/htdocs/git/repos/gamergeeks/trunk/wp-content/themes/gamergeeks/library/scss/_mixins.scss",
+		"/C/xampp/htdocs/git/repos/gamergeeks/trunk/wp-content/themes/gamergeeks/library/scss/_768up.scss",
+		"/C/xampp/htdocs/git/repos/gamergeeks/trunk/wp-content/themes/gamergeeks/functions.php",
+		"/C/xampp/htdocs/git/repos/gamergeeks/trunk/wp-content/themes/gamergeeks/sidebar-right.php",
+		"/C/xampp/htdocs/git/repos/gamergeeks/trunk/wp-content/themes/gamergeeks/style.css",
+		"/C/xampp/htdocs/git/repos/gamergeeks/trunk/wp-content/themes/gamergeeks/index.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/single-scenaristen.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/single-acteurs.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/single-actrices 2.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/single-actrices.php",
+		"/C/Users/Frank/Desktop/spoton-transfer/wp-config.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/group_contact_overview.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/group_contact_overview 2.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/style 2.css",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/header 2.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/desktop.css",
+		"/C/Users/Frank/Desktop/vmi-transfer/css/base.css",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/attachment.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/businessline_detail_with_sidebar 2.php",
+		"/C/Users/Frank/Desktop/vmi-transfer/page-templates/businessline_detail_with_sidebar.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/taxonomy-filters.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/single.php",
+		"/C/Users/Frank/Desktop/vmi-transfer/functions.php",
+		"/C/Users/Frank/Desktop/vmi-transfer/single-company-info.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/redirect-last-release.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/businessline_detail_with_sidebar.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/single-company-info.php",
+		"/C/Users/Frank/Desktop/vmi-transfer/archive-company-info.php",
+		"/C/Users/Frank/Desktop/vmi-transfer/sidebar-pressroom.php",
+		"/C/Users/Frank/Desktop/vmi-transfer/inc/pressroom_sidebar_list.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/archive-company-info.php",
+		"/C/Users/Frank/Desktop/vmi-transfer/inc/register_taxonomies.php",
+		"/C/Users/Frank/Desktop/vmi-transfer/inc/register_post_types.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/register_taxonomies 2.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/register_post_types.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/functions 2.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/widgets.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/index 2.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/register_taxonomies.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/register_post_types 2.php",
+		"/D/Documents/Work/_Studio-Stomp/backups/vmi-cn/wp-content/themes/vmi-groep/functions.php",
+		"/D/Documents/Work/_Studio-Stomp/backups/vmi-cn/wp-content/themes/vmi-groep/inc/register_post_types.php",
+		"/C/Users/Frank/Desktop/register_post_types.php",
+		"/C/Users/Frank/Desktop/register_taxonomies.php",
+		"/C/Users/Frank/Desktop/functions.php",
+		"/C/Users/Frank/Desktop/vmi-transfer/inc/dump_and_die.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/pressroom_sidebar_list.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/sidebar-pressroom.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/archive-press-media.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/image_sizes.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/get_centered_thumb.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/pressreleases_detail_with_sidebar.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/dump_and_die.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/single-press-releases.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/sidebar.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/functions 3.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/single-acteurs 2.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/category.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/archive-okay-portfolio.php",
+		"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/custom-archive.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\Users\\Frank\\Desktop\\vmi-v3\\wp-content\\themes\\vmi-groep",
+			"C:\\xampp\\htdocs\\git\\repos\\gamergeeks\\trunk\\wp-content\\themes\\gamergeeks\\library",
+			"C:\\Users\\Frank\\Desktop\\vmi-v3\\wp-content\\themes\\vmi-groep",
+			"C:\\xampp\\htdocs\\svpf\\wp-content\\themes\\praktischefilosofie"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"</section>",
+			"=\"#/\">",
+			"page",
+			"</section>",
+			"<section>",
+			"<article>",
+			"SCORE",
+			"Functionalities",
+			"Namespace",
+			"<li>",
+			"Namespace",
+			"<section>",
+			"data-route=\"\">",
+			"</section>",
+			"self",
+			"currentpositionma",
+			"_",
+			"_start_interval",
+			"function ",
+			"},",
+			"50",
+			"all",
+			"margin",
+			";\n",
+			"0.3s",
+			".3s",
+			"margin",
+			"right",
+			"margin",
+			"3s",
+			".3",
+			"margin",
+			"-right",
+			"min",
+			"device",
+			"fancybox",
+			"js",
+			"p ",
+			"compass",
+			"padding",
+			"section.content-container.pressroom ",
+			"pressroom",
+			"press room",
+			"Download",
+			"download ui-link",
+			"press",
+			"download",
+			"content",
+			"button",
+			"$posts = get_posts(array(\n									'posts_per_page' => $limitPosts,\n									'order' => 'DESC',\n									'post-type' => 'post',\n									'meta_query' => array(\n										array(\n											'key' => 'acteurs_selectie',\n											'value' => '\"' . $pageID . '\"',\n											'compare' => 'LIKE'\n										)\n									)\n								));",
+			"allposts",
+			"post",
+			"h2",
+			"title",
+			"archive",
+			"read more",
+			"->",
+			"acteurs",
+			"405",
+			"text",
+			"gradient",
+			"mailview",
+			"TestMail",
+			"php",
+			"getAdminMail",
+			"successfull",
+			"debug",
+			"nav",
+			"dark",
+			"informatie aanv",
+			"debug",
+			"getAdmin",
+			"mail",
+			"single",
+			"sub",
+			"add",
+			"menu",
+			"banner",
+			"url",
+			"users",
+			"href",
+			"$caption",
+			"slide",
+			"bedankt",
+			"dank ",
+			"bedankt ",
+			"isset",
+			"id",
+			"?",
+			"POST",
+			"default",
+			"marknuyens",
+			"height: 25px",
+			"height: 21px",
+			"25px",
+			"events",
+			"form",
+			"good stuff",
+			"name",
+			"date",
+			"print_r",
+			"$location",
+			"location",
+			"time",
+			"$event_name",
+			"eventID",
+			"$location",
+			"th_event_time",
+			"time",
+			" $",
+			"event_name",
+			"name",
+			"'event'",
+			"event",
+			"option",
+			"$eventID",
+			"listE",
+			"h2",
+			"th_event",
+			"schrijf je nu in voor een introductieles",
+			"banner",
+			"h2",
+			"prev",
+			"test",
+			"prev-tab",
+			"next-tab",
+			"test",
+			"informatie"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": false,
+		"replace_history":
+		[
+			"tab",
+			"dragging",
+			"mild",
+			"</div>",
+			"",
+			"<?php echo",
+			"<?php",
+			"scenaristen",
+			"actrices",
+			"cn",
+			"download",
+			"cn",
+			"",
+			"h2",
+			"mobile",
+			"-",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "assignments/week3/9-templates/index.html",
+					"settings":
+					{
+						"buffer_size": 883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 52.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "assignments/week3/9-templates/app.js",
+					"settings":
+					{
+						"buffer_size": 710,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								653,
+								653
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 960.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"single",
+				"/C/Users/Frank/AppData/Local/Temp/fz3temp-1/single-actrices.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
+	"status_bar_visible": true
+}
