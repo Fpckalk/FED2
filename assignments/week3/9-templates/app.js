@@ -38,15 +38,13 @@ var APP = APP || {};
 		description: 'This is the game.',
 		gameInfo: function() {
 					var data = APP.json.xmlRequest('GET', 'teams.json');
-					var items;
 					data.onload = function() {
-						console.log(data.response);
-						return data.response; // This doesn't work for some reason
+						console.log(data.response); // Works
+						return data.response; // Doesn't work. What the dick.
 					}
 				}
-	}
+	},
 
-	
 	APP.json = {
 
 		xmlRequest: function(method, file) {
@@ -54,7 +52,7 @@ var APP = APP || {};
 			var request = new XMLHttpRequest;
 
 			request.open(method, file);
-			request.send();
+			request.send(null);
 
 			return request;
 
@@ -141,6 +139,10 @@ var APP = APP || {};
 			Transparency.render(qwery('[data-route=game]')[0], APP.game);
 			APP.router.change();
 		}
+	}
+
+	APP.directives = {
+
 	}
 
 	////////////////////// This is a well commented line
