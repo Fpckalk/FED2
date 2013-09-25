@@ -1,0 +1,16 @@
+/* Table styles */
+table, th, td {
+	text-align: left;
+}
+
+th {
+	padding-right: 40px;
+}
+
+article {
+	display: none;
+}
+
+article.active {
+	display: block;
+}

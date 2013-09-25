@@ -37,30 +37,28 @@ var APP = APP || {};
 		title: 'Game',
 		description: 'This is the game.',
 		gameInfo: function() {
-					var data = APP.json.xmlRequest('GET', 'teams.json');
-					data.onload = function() {
-						console.log(data.response); // Works
-						return data.response; // Doesn't work. What the dick.
-					}
+					var data = APP.request.xmlRequest('GET', 'teams.json', function(data) {
+						console.log(data.response);
+					});
 				}
 	},
 
-	APP.json = {
+	APP.request = {
 
-		xmlRequest: function(method, file) {
+		// Request any xml type file by passing up the method and file you're looking for
+		xmlRequest: function(method, file, success) {
 
 			var request = new XMLHttpRequest;
 
 			request.open(method, file);
 			request.send(null);
 
-			return request;
-
-		},
-
-		requestLoad: function(data) {
-
-			return(data.response);
+			request.onreadystatechange = function() {
+				if (request.readyState == 4) {
+					if (request.status == 200)
+						success(request);
+				}
+			}
 
 		}
 
@@ -138,11 +136,11 @@ var APP = APP || {};
 		game: function () {
 			Transparency.render(qwery('[data-route=game]')[0], APP.game);
 			APP.router.change();
+		},
+
+		test: function() {
+			Transparency.render(qwery('[data-route=game]')[0], APP.game.directives);
 		}
-	}
-
-	APP.directives = {
-
 	}
 
 	////////////////////// This is a well commented line
