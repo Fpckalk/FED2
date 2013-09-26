@@ -19,6 +19,7 @@ var APP = APP || {};
 
 	};
 
+
 	// Apply data to the different 'pages'
 
 	APP.schedule = {
