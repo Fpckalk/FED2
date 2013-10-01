@@ -15,33 +15,29 @@ var APP = APP || {};
 
 		init: function() {
 			APP.router.init();
+			APP.gameLoad.loadData();
 		}
 
-	}
+	};
 
 	// Apply data to the different 'pages'
 
 	APP.schedule = {
 		title: 'Schedule',
 		description: 'This is the schedule.'
-	},
+	};
 
 	APP.ranking = {
 
 		title: 'Ranking',
 		description: 'This is the ranking.'
 
-	},
+	};
 
 	APP.game = {
 		title: 'Game',
-		description: 'This is the game.',
-		gameInfo: function() {
-					var data = APP.request.xmlRequest('GET', 'teams.json', function(data) {
-						console.log(data.response);
-					});
-				}
-	},
+		description: 'This is the game.'
+	};
 
 	APP.request = {
 
@@ -55,14 +51,29 @@ var APP = APP || {};
 
 			request.onreadystatechange = function() {
 				if (request.readyState == 4) {
-					if (request.status == 200)
+					if (request.status == 200) {
 						success(request);
+					}
 				}
 			}
 
 		}
 
-	}
+	};
+
+
+	APP.gameLoad = {
+
+		loadData: function() {
+			APP.request.xmlRequest('GET', 'data/teams.json', function(data) {
+				var data = JSON.parse(data.response);
+				
+				// Called here because I could not get the directives to behave
+				Transparency.render(qwery('[data-bind=gameInfo]')[0], data);
+			})
+		}
+
+	};
 
 
 	// ROUTIE
@@ -134,14 +145,10 @@ var APP = APP || {};
 		},
 
 		game: function () {
-			Transparency.render(qwery('[data-route=game]')[0], APP.game);
+			Transparency.render(qwery('[data-route=game]')[0], APP.game, APP.gameDirectives);
 			APP.router.change();
-		},
-
-		test: function() {
-			Transparency.render(qwery('[data-route=game]')[0], APP.game.directives);
 		}
-	}
+	};
 
 	////////////////////// This is a well commented line
 	domready(function() {
