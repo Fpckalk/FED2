@@ -88,6 +88,11 @@ var APP = APP || {};
 					APP.page.game();
 				},
 
+				'/movies': function() {
+					console.log('Movies called');
+					APP.page.movies();
+				},
+
 				'*': function() {
 					console.log('Catch-all called');
 					APP.page.schedule();
