@@ -2,6 +2,11 @@
 
 A basic framework skeleton
 
+Leaguevine access token: 82996312dc
+Tournament ID: 19389
+
+Using own made XHR with callbacks
+
 */
 
 var APP = APP || {};
@@ -12,7 +17,6 @@ var APP = APP || {};
 	 * everything has finished loading.
 	*/
 	APP.controller = {
-
 		init: function() {
 			APP.router.init();
 		}
@@ -25,16 +29,7 @@ var APP = APP || {};
 	APP.schedule = {
 
 		title: 'Pool A - Schedule',
-		description: 'This is the schedule.',
-		scheduleData: promise.get('data/teams.json').then(function(error, text, xhr) {
-				if(error) {
-					console.log('Error ' + xhr.status);
-					return;
-				}
-				var data = JSON.parse(text);
-				console.log(data.schedule);
-				Transparency.render(qwery('[data-bind=scheduleData]')[0], data.schedule);
-			})
+		description: 'This is the schedule.'
 
 	};
 
@@ -59,6 +54,23 @@ var APP = APP || {};
 
 		title: 'Movies',
 		description: 'A collection of movies'
+
+	};
+
+
+	APP.movieDirectives = {
+
+		cover: {
+			src: promise.get('data/movies.json').then(function(error, text, xhr) {
+				if(error) {
+					console.log('Error ' + xhr.status);
+					return;
+				}
+				var data = JSON.parse(text);
+				console.log(data[0].cover);
+				return data[0].cover;
+			})
+		}
 
 	};
 
@@ -144,7 +156,7 @@ var APP = APP || {};
 		},
 
 		movies: function() {
-			Transparency.render(qwery('[data-route=movies]')[0], APP.movies);
+			Transparency.render(qwery('[data-route=movies]')[0], APP.movies, APP.movieDirectives);
 			APP.router.change();
 		}
 
