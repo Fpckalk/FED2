@@ -65,7 +65,7 @@ var APP = APP || {};
 	APP.gameLoad = {
 
 		loadData: function() {
-			APP.request.xmlRequest('GET', 'data/movies.json', function(data) {
+			APP.request.xmlRequest('GET', 'data/teams.json', function(data) {
 				var data = JSON.parse(data.response);
 				
 				// Called here because I could not get the directives to behave

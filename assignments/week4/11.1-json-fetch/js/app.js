@@ -24,6 +24,29 @@ var APP = APP || {};
 	};
 
 
+	APP.request = {
+
+		// Request any xml type file by passing up the method and file you're looking for
+		xmlRequest: function(method, file, success) {
+
+			var request = new XMLHttpRequest;
+
+			request.open(method, file);
+			request.send(null);
+
+			request.onreadystatechange = function() {
+				if (request.readyState == 4) {
+					if (request.status == 200) {
+						success(request);
+					}
+				}
+			}
+
+		}
+
+	};
+
+
 	// Apply data to the different 'pages'
 
 	APP.schedule = {
@@ -53,24 +76,11 @@ var APP = APP || {};
 	APP.movies = {
 
 		title: 'Movies',
-		description: 'A collection of movies'
-
-	};
-
-
-	APP.movieDirectives = {
-
-		cover: {
-			src: promise.get('data/movies.json').then(function(error, text, xhr) {
-				if(error) {
-					console.log('Error ' + xhr.status);
-					return;
-				}
-				var data = JSON.parse(text);
-				console.log(data[0].cover);
-				return data[0].cover;
-			})
-		}
+		description: 'A collection of movies',
+		cover: APP.request.xmlRequest('GET', 'data/movies.json', function(data) {
+			data = JSON.parse(data.response);
+			console.log(data);
+		})
 
 	};
 
@@ -86,27 +96,22 @@ var APP = APP || {};
 			routie({
 
 				'/schedule': function() {
-					console.log('Schedule called');
 					APP.page.schedule();
 				},
 
 				'/ranking': function() {
-					console.log('Ranking called');
 					APP.page.ranking();
 				},
 
 				'/game': function() {
-					console.log('Game called');
 					APP.page.game();
 				},
 
 				'/movies': function() {
-					console.log('Movies called');
 					APP.page.movies();
 				},
 
 				'*': function() {
-					console.log('Catch-all called');
 					APP.page.schedule();
 				}
 
@@ -156,7 +161,7 @@ var APP = APP || {};
 		},
 
 		movies: function() {
-			Transparency.render(qwery('[data-route=movies]')[0], APP.movies, APP.movieDirectives);
+			Transparency.render(qwery('[data-route=movies]')[0], APP.movies);
 			APP.router.change();
 		}
 
