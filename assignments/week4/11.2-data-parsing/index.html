@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON Fetch</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#/schedule">Schedule</a></li>
+				<li><a href="#/game">Game</a></li>
+				<li><a href="#/ranking">Ranking</a></li>
+				<li><a href="#/movies">Movies</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<article data-route="schedule">
+
+		<section>
+			
+			<h1 data-bind="title"></h1>
+			<p data-bind="description"></p>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Monday 18 March</th>
+						<th>Team</th>
+						<th>Result</th>
+						<th>Team</th>
+					</tr>
+				</thead>
+				<tbody data-bind="scheduleData">
+					<tr>
+						<td data-bind="date"></td>
+						<td data-bind="team1"></td>
+						<td data-bind="result"></td>
+						<td data-bind="team2"></td>
+					</tr>
+				</tbody>
+			</table>
+				
+		</section>
+
+	</article>
+
+	<article data-route="game">
+
+		<section>
+			
+			<h1 data-bind="title"></h1>	
+			<p data-bind="description"></p>
+			<table>				
+				<thead>
+					<tr>
+						<th>Score</th>
+						<th>Team</th>
+						<th>Points</th>
+						<th>Team</th>
+					</tr>
+				</thead>
+				<tbody data-bind="gameData">
+					<tr>
+						<td data-bind="score"></td>
+						<td data-bind="team1"></td>
+						<td data-bind="result"></td>
+						<td data-bind="team2"></td>
+					</tr>
+				</tbody>
+			</table>
+				
+		</section>
+
+	</article>
+
+	<article data-route="ranking">
+
+		<section>
+			
+			<h1 data-bind="title"></h1>	
+			<p data-bind="description"></p>
+
+			<table>
+				<theader>
+					<tr>
+						<th>Team</th>
+	                    <th>W</th>
+	                    <th>L</th>
+	                    <th>Points won</th>
+	                    <th>Points lost</th>
+	                    <th>+/-</th>
+					</tr>
+				</theader>
+				<tbody data-bind="rankingData">
+					<tr>
+						<td data-bind="team"></td>
+						<td data-bind="Win"></td>
+						<td data-bind="Lost"></td>
+						<td data-bind="Pw"></td>
+						<td data-bind="Pl"></td>
+						<td data-bind="result"></td>
+					</tr>
+				</tbody>
+			</table>
+				
+		</section>
+
+	</article>
+
+	<article data-route="movies">
+		
+		<section>
+			
+			<h1 data-bind="title"></h1>
+			<p data-bind="description"></p>
+
+			<img data-bind="cover">
+
+		</section>
+
+	</article>
+
+	
+
+	<!-- Libs -->
+	<script src="lib/ready.min.js"></script>
+	<script src="lib/routie.min.js"></script>
+	<script src="lib/transparency.min.js"></script>
+	<script src="lib/qwery.min.js"></script>
+	<script src="lib/promise.min.js"></script>
+
+	<!-- App -->
+	<script src="js/app.js"></script>
+</body>
+</html>
