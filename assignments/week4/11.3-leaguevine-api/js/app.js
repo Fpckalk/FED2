@@ -2,7 +2,7 @@
 
 A basic framework skeleton
 
-Leaguevine access token: 82996312dc
+Leaguevine access token: 248cf621f6
 Tournament ID: 19389
 
 Using own made XHR with callbacks
@@ -150,28 +150,33 @@ var APP = APP || {};
 	APP.page = {
 
 		schedule: function() {
-			APP.request.xmlRequest('GET', 'data/teams.json', function(data) {
+			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/tournaments/19389/?access_token=248cf621f6/', function(data) {
 				data = JSON.parse(data.response);
-
-				Transparency.render(qwery('[data-bind=scheduleData]')[0], data.schedule, APP.directives.schedule(data.schedule));
+				console.log(data);
+				Transparency.render(qwery('[data-bind=scheduleData]')[0], data, APP.directives.schedule(data));
 				APP.router.change();				
 			})
 		},
 
 		game: function() {
-			Transparency.render(qwery('[data-route=game]')[0], APP.game);
-			APP.router.change();
+			APP.request.xmlRequest('GET', 'data/teams.json', function(data) {
+				data = JSON.parse(data.response);
+				Transparency.render(qwery('[data-bind=gameData]')[0], data.game, APP.directives.game(data.game));
+				APP.router.change();
+			})
 		},
 
 		ranking: function() {
-			Transparency.render(qwery('[data-route=ranking]')[0], APP.ranking);
-			APP.router.change();
+			APP.request.xmlRequest('GET', 'data/teams.json', function(data) {
+				data = JSON.parse(data.response);
+				Transparency.render(qwery('[data-bind=rankingData]')[0], data.ranking, APP.directives.ranking(data.ranking));
+				APP.router.change();
+			})
 		},
 
 		movies: function() {
 			APP.request.xmlRequest('GET', 'data/movies.json', function(data) {
 				data = JSON.parse(data.response);
-
 				Transparency.render(qwery('[data-route=movies]')[0], data, APP.directives.movies(data));
 				APP.router.change();
 			});
@@ -182,21 +187,39 @@ var APP = APP || {};
 	// All the thanks go to Joost Faber
 	// https://github.com/joostf
 	APP.directives = {
+		schedule: function(data) {
+			return {
+				result: {
+					text: function() {
+						return this.team1Score + " - " + this.team2Score;
+					}
+				}
+			}
+		},
+		game: function(data) {
+			return {
+				result: {
+					text: function() {
+						return this.team1Score + " - " + this.team2Score;
+					}
+				}
+			}
+		},
+		ranking: function(data) {
+			return {
+				result: {
+					text: function() {
+						return this.Pw - this.Pl;
+					}
+				}
+			}
+		},
 		movies: function (data) {
 			console.log(data);
 			return {
 				cover: {
 					src: function() {
 						return this.cover;
-					}
-				}
-			}
-		},
-		schedule: function(data) {
-			return {
-				result: {
-					text: function() {
-						return this.team1Score + " - " + this.team2Score;
 					}
 				}
 			}

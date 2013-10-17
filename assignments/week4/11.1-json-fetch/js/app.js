@@ -76,13 +76,18 @@ var APP = APP || {};
 	APP.movies = {
 
 		title: 'Movies',
-		description: 'A collection of movies',
-		cover: APP.request.xmlRequest('GET', 'data/movies.json', function(data) {
-			data = JSON.parse(data.response);
-			console.log(data);
-		})
+		description: 'A collection of movies'
 
 	};
+
+	APP.movieDirectives = {
+		cover: {
+			src: APP.request.xmlRequest('GET', 'data/movies.json', function(data) {
+				data = JSON.parse(data.response);
+				console.log(data);
+			})
+		}
+	}
 
 
 	// ROUTIE
@@ -161,7 +166,7 @@ var APP = APP || {};
 		},
 
 		movies: function() {
-			Transparency.render(qwery('[data-route=movies]')[0], APP.movies);
+			Transparency.render(qwery('[data-route=movies]')[0], APP.movies, APP.movieDirectives);
 			APP.router.change();
 		}
 
