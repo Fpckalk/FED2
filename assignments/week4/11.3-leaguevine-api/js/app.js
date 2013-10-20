@@ -150,36 +150,30 @@ var APP = APP || {};
 	APP.page = {
 
 		schedule: function() {
-			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/tournaments/19389/?access_token=248cf621f6/', function(data) {
+			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/games/?tournament_id=19389&order_by=%5Bstart_time%5D&fields=%5Bteam_1%2C%20team_2%2C%20start_time%5D&access_token=d6fb6c85cb/', function(data) {
 				data = JSON.parse(data.response);
 				console.log(data);
-				Transparency.render(qwery('[data-bind=scheduleData]')[0], data, APP.directives.schedule(data));
+				Transparency.render(qwery('[data-bind=scheduleData]')[0], data.objects, APP.directives.schedule(data.objects));
 				APP.router.change();				
 			})
 		},
 
 		game: function() {
-			APP.request.xmlRequest('GET', 'data/teams.json', function(data) {
+			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/games/?season_id=20167&fields=%5Bteam_1%2C%20team_1_score%2C%20team_2%2C%20team_2_score%5D&offset=1&access_token=d0cff4f798/', function(data) {
 				data = JSON.parse(data.response);
-				Transparency.render(qwery('[data-bind=gameData]')[0], data.game, APP.directives.game(data.game));
+				console.log(data);
+				Transparency.render(qwery('[data-bind=gameData]')[0], data.objects, APP.directives.game(data.objects));
 				APP.router.change();
 			})
 		},
 
 		ranking: function() {
-			APP.request.xmlRequest('GET', 'data/teams.json', function(data) {
+			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/teams/?season_id=20167&fields=%5Bid%2C%20leaguevine_url%2C%20losses%2C%20name%2C%20profile_image_50%2C%20season%2C%20wins%5D&access_token=d0cff4f798/', function(data) {
 				data = JSON.parse(data.response);
-				Transparency.render(qwery('[data-bind=rankingData]')[0], data.ranking, APP.directives.ranking(data.ranking));
+				console.log(data);
+				Transparency.render(qwery('[data-bind=rankingData]')[0], data.objects, APP.directives.ranking(data.objects));
 				APP.router.change();
 			})
-		},
-
-		movies: function() {
-			APP.request.xmlRequest('GET', 'data/movies.json', function(data) {
-				data = JSON.parse(data.response);
-				Transparency.render(qwery('[data-route=movies]')[0], data, APP.directives.movies(data));
-				APP.router.change();
-			});
 		}
 
 	};
@@ -193,6 +187,16 @@ var APP = APP || {};
 					text: function() {
 						return this.team1Score + " - " + this.team2Score;
 					}
+				},
+				team_1: {
+					text: function() {
+						return this.team_1.name;
+					}
+				},
+				team_2: {
+					text: function() {
+						return this.team_2.name;
+					}
 				}
 			}
 		},
@@ -200,7 +204,17 @@ var APP = APP || {};
 			return {
 				result: {
 					text: function() {
-						return this.team1Score + " - " + this.team2Score;
+						return this.team_1_score + " - " + this.team_2_score;
+					}
+				},
+				team_1: {
+					text: function() {
+						return this.team_1.name;
+					}
+				},
+				team_2: {
+					text: function() {
+						return this.team_2.name;
 					}
 				}
 			}
@@ -209,17 +223,12 @@ var APP = APP || {};
 			return {
 				result: {
 					text: function() {
-						return this.Pw - this.Pl;
+						return this.wins - this.losses;
 					}
-				}
-			}
-		},
-		movies: function (data) {
-			console.log(data);
-			return {
-				cover: {
+				},
+				profile_image_50: {
 					src: function() {
-						return this.cover;
+						return this.profile_image_50;
 					}
 				}
 			}

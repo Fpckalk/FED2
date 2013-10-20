@@ -14,7 +14,6 @@
 				<li><a href="#/schedule">Schedule</a></li>
 				<li><a href="#/game">Game</a></li>
 				<li><a href="#/ranking">Ranking</a></li>
-				<li><a href="#/movies">Movies</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -31,13 +30,14 @@
 					<tr>
 						<th>Monday 18 March</th>
 						<th>Team</th>
-						<th>Result</th>
 						<th>Team</th>
 					</tr>
 				</thead>
 				<tbody data-bind="scheduleData">
 					<tr>
-						<td data-bind="name"></td>
+						<td data-bind="start_time"></td>
+						<td data-bind="team_1"></td>
+						<td data-bind="team_2"></td>
 					</tr>
 				</tbody>
 			</table>
@@ -55,7 +55,6 @@
 			<table>				
 				<thead>
 					<tr>
-						<th>Score</th>
 						<th>Team</th>
 						<th>Points</th>
 						<th>Team</th>
@@ -63,10 +62,9 @@
 				</thead>
 				<tbody data-bind="gameData">
 					<tr>
-						<td data-bind="info"></td>
-						<td data-bind="team1"></td>
+						<td data-bind="team_1"></td>
 						<td data-bind="result"></td>
-						<td data-bind="team2"></td>
+						<td data-bind="team_2"></td>
 					</tr>
 				</tbody>
 			</table>
@@ -88,18 +86,17 @@
 						<th>Team</th>
 	                    <th>W</th>
 	                    <th>L</th>
-	                    <th>Points won</th>
-	                    <th>Points lost</th>
 	                    <th>+/-</th>
 					</tr>
 				</theader>
 				<tbody data-bind="rankingData">
 					<tr>
-						<td data-bind="team"></td>
-						<td data-bind="Win"></td>
-						<td data-bind="Lost"></td>
-						<td data-bind="Pw"></td>
-						<td data-bind="Pl"></td>
+						<td>
+							<img src="" data-bind="profile_image_50"/>
+							<span data-bind="name"></span>
+						</td>
+						<td data-bind="wins"></td>
+						<td data-bind="losses"></td>
 						<td data-bind="result"></td>
 					</tr>
 				</tbody>
@@ -108,20 +105,6 @@
 		</section>
 
 	</article>
-
-	<article data-route="movies">
-		
-		<section>
-			
-			<h1 data-bind="title"></h1>
-			<p data-bind="description"></p>
-
-			<img data-bind="cover">
-
-		</section>
-
-	</article>
-
 	
 
 	<!-- Libs -->
