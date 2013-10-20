@@ -36,9 +36,12 @@ var APP = APP || {};
 			request.open(method, file);
 			request.send(null);
 
+			document.getElementById("loader").className = "loading";
+			
 			request.onreadystatechange = function() {
 				if (request.readyState == 4) {
 					if (request.status == 200) {
+						document.getElementById("loader").className = "";
 						success(request);
 					}
 				}
