@@ -162,7 +162,7 @@ var APP = APP || {};
 		},
 
 		game: function() {
-			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/games/?season_id=20167&fields=%5Bteam_1%2C%20team_1_score%2C%20team_2%2C%20team_2_score%5D&offset=1&access_token=d0cff4f798/', function(data) {
+			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/games/?tournament_id=19389&fields=%5Bteam_1%2C%20team_1_score%2C%20team_2%2C%20team_2_score%5D&offset=1&access_token=f2df9bb5d6/', function(data) {
 				data = JSON.parse(data.response);
 				console.log(data);
 				Transparency.render(qwery('[data-bind=gameData]')[0], data.objects, APP.directives.game(data.objects));
@@ -186,9 +186,10 @@ var APP = APP || {};
 	APP.directives = {
 		schedule: function(data) {
 			return {
-				result: {
+				start_time: {
 					text: function() {
-						return this.team1Score + " - " + this.team2Score;
+						var time = this.start_time.substr(11, 8);
+						return time;
 					}
 				},
 				team_1: {

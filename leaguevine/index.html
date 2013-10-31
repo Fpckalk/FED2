@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>JSON Fetch</title>
+	<title>Leaguevine App</title>
 
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -32,8 +32,9 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Monday 18 March</th>
+						<th>Monday, October 21st</th>
 						<th>Team</th>
+						<th>Score</th>
 						<th>Team</th>
 					</tr>
 				</thead>
@@ -41,6 +42,13 @@
 					<tr>
 						<td data-bind="start_time"></td>
 						<td data-bind="team_1"></td>
+						<td>
+							<form>
+								<input type="text" data-bind="score_1" placeholder="">
+								<input type="text" data-bind="score_2" placeholder="">
+								<button data-type="submit">Submit</button>
+							</form>
+						</td>
 						<td data-bind="team_2"></td>
 					</tr>
 				</tbody>
@@ -95,10 +103,6 @@
 				</theader>
 				<tbody data-bind="rankingData">
 					<tr>
-						<td>
-							<img src="" data-bind="profile_image_50"/>
-							<span data-bind="name"></span>
-						</td>
 						<td data-bind="wins"></td>
 						<td data-bind="losses"></td>
 						<td data-bind="result"></td>

@@ -21,6 +21,13 @@ var APP = APP || {};
 	APP.controller = {
 		init: function() {
 			APP.router.init();
+			this.enable();
+		},
+
+		// Event handlers
+		enable: function() {
+			var el = qwery('[data-type=submit]')[0];
+			el.addEventListener('click', APP.request.update, false);
 		}
 
 	};
@@ -47,12 +54,21 @@ var APP = APP || {};
 				}
 			}
 
+		},
+
+
+		update: function() {
+
+			console.log('test');
+
 		}
 
 	};
 
 
 	// Apply data to the different 'pages'
+	// The rest of these can be found under the directives
+	// Which are located near the bottom of this script
 
 	APP.schedule = {
 
@@ -76,20 +92,6 @@ var APP = APP || {};
 		description: 'This is the ranking.'
 
 	};
-
-
-	APP.movies = {
-
-		title: 'Movies',
-		description: 'A collection of movies'
-
-	};
-
-	// APP.movieDirectives = {
-	// 	cover: {
-	// 		src: return this.cover;
-	// 	}
-	// }
 
 
 	// ROUTIE
@@ -153,16 +155,16 @@ var APP = APP || {};
 	APP.page = {
 
 		schedule: function() {
-			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/games/?tournament_id=19389&order_by=%5Bstart_time%5D&fields=%5Bteam_1%2C%20team_2%2C%20start_time%5D&access_token=d6fb6c85cb/', function(data) {
+			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/games/?tournament_id=19389&order_by=%5Bstart_time%5D&fields=%5Bid%2C%20team_1%2C%20team_2%2C%20start_time%2C%20team_1_score%2C%20team_2_score%5D&access_token=d6fb6c85cb/', function(data) {
 				data = JSON.parse(data.response);
 				console.log(data);
 				Transparency.render(qwery('[data-bind=scheduleData]')[0], data.objects, APP.directives.schedule(data.objects));
-				APP.router.change();				
+				APP.router.change();		
 			})
 		},
 
 		game: function() {
-			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/games/?season_id=20167&fields=%5Bteam_1%2C%20team_1_score%2C%20team_2%2C%20team_2_score%5D&offset=1&access_token=d0cff4f798/', function(data) {
+			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/games/?season_id=20167&fields=%5Bteam_1%2C%20team_1_score%2C%20team_2%2C%20team_2_score%5D&offset=2&access_token=d0cff4f798/', function(data) {
 				data = JSON.parse(data.response);
 				console.log(data);
 				Transparency.render(qwery('[data-bind=gameData]')[0], data.objects, APP.directives.game(data.objects));
@@ -184,16 +186,28 @@ var APP = APP || {};
 	// All the thanks go to Joost Faber
 	// https://github.com/joostf
 	APP.directives = {
+
 		schedule: function(data) {
 			return {
-				result: {
+				start_time: {
 					text: function() {
-						return this.team1Score + " - " + this.team2Score;
+						var date = this.start_time.split("T");
+						return date[1];
 					}
 				},
 				team_1: {
 					text: function() {
 						return this.team_1.name;
+					}
+				},
+				score_1: {
+					value: function() {
+						return this.team_1_score;
+					}
+				},
+				score_2: {
+					value: function() {
+						return this.team_2_score;
 					}
 				},
 				team_2: {
@@ -203,6 +217,7 @@ var APP = APP || {};
 				}
 			}
 		},
+
 		game: function(data) {
 			return {
 				result: {
@@ -222,20 +237,17 @@ var APP = APP || {};
 				}
 			}
 		},
+
 		ranking: function(data) {
 			return {
 				result: {
 					text: function() {
 						return this.wins - this.losses;
 					}
-				},
-				profile_image_50: {
-					src: function() {
-						return this.profile_image_50;
-					}
 				}
 			}
 		}
+
 	}
 
 
