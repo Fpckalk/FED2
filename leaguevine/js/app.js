@@ -38,20 +38,11 @@ var APP = APP || {};
 	APP.request = {
 
 		// Request any xml type file by passing up the method and file you're looking for
-		xmlRequest: function(method, file, headers, success) {
+		xmlGet: function(file, success) {
 
 			var request = new XMLHttpRequest;
 
-			request.open(method, file);
-			// The headers should be set after open()
-			// due to an anomaly in Gecko
-			if (method === "POST") {
-				request.setRequestHeader(
-					"X-Hello",
-					"Is it me you're looking for",
-					false
-				);				
-			}
+			request.open('GET', file);
 			request.send(null);
 
 			document.getElementById("loader").className = "loading";
@@ -68,10 +59,41 @@ var APP = APP || {};
 
 		},
 
+		// Divided these two bad boys
+		// Optional parameters would get a tad too confusing
+		xmlPost: function(method, url, params, success) {
+
+			var request = new XMLHttpRequest;
+			var params = "game_id=127164&team_1_score=1&team_2_score=2&is_final=false";
+
+			request.open(method, url, true);
+			if (method === 'POST') {
+				request.setRequestHeader("Content-Type", "application/json", false);				
+				request.setRequestHeader("Accept", "application/json", false);
+				request.setRequestHeader("Authorization", "bearer 248cf621f6", false);
+			}
+			request.send(params);
+
+			document.getElementById("loader").className = "loading";
+
+			request.onreadystatechange = function() {
+				if(request.readyState == 4 && request.status == 200) {
+					document.getElementById("loader").className = "";
+					succes(request);
+				}
+			}
+		},
 
 		update: function() {
+			this.preventDefault;
 
 			console.log(this.innerHTML);
+			var params = {
+
+			}
+			xmlPost('POST', 'https://api.leaguevine.com/v1/game_scores/', params, function() {
+				console.log('Post succesful!');
+			})
 
 		}
 
@@ -167,7 +189,7 @@ var APP = APP || {};
 	APP.page = {
 
 		schedule: function() {
-			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/games/?tournament_id=19389&order_by=%5Bstart_time%5D&fields=%5Bid%2C%20team_1%2C%20team_2%2C%20start_time%2C%20team_1_score%2C%20team_2_score%5D&access_token=d6fb6c85cb/', '' , function(data) {
+			APP.request.xmlGet('https://api.leaguevine.com/v1/games/?tournament_id=19389&order_by=%5Bstart_time%5D&fields=%5Bid%2C%20team_1%2C%20team_2%2C%20start_time%2C%20team_1_score%2C%20team_2_score%5D&access_token=d6fb6c85cb/', function(data) {
 				data = JSON.parse(data.response);
 				console.log(data);
 				Transparency.render(qwery('[data-bind=scheduleData]')[0], data.objects, APP.directives.schedule(data.objects));
@@ -176,7 +198,7 @@ var APP = APP || {};
 		},
 
 		game: function() {
-			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/games/?season_id=20167&fields=%5Bteam_1%2C%20team_1_score%2C%20team_2%2C%20team_2_score%5D&offset=2&access_token=d0cff4f798/', '', function(data) {
+			APP.request.xmlGet('https://api.leaguevine.com/v1/games/?season_id=20167&fields=%5Bteam_1%2C%20team_1_score%2C%20team_2%2C%20team_2_score%5D&offset=2&access_token=d0cff4f798/', function(data) {
 				data = JSON.parse(data.response);
 				console.log(data);
 				Transparency.render(qwery('[data-bind=gameData]')[0], data.objects, APP.directives.game(data.objects));
@@ -185,7 +207,7 @@ var APP = APP || {};
 		},
 
 		ranking: function() {
-			APP.request.xmlRequest('GET', 'https://api.leaguevine.com/v1/teams/?season_id=20167&fields=%5Bid%2C%20leaguevine_url%2C%20losses%2C%20name%2C%20profile_image_50%2C%20season%2C%20wins%5D&access_token=d0cff4f798/', '', function(data) {
+			APP.request.xmlGet('https://api.leaguevine.com/v1/teams/?season_id=20167&fields=%5Bid%2C%20leaguevine_url%2C%20losses%2C%20name%2C%20profile_image_50%2C%20season%2C%20wins%5D&access_token=d0cff4f798/', function(data) {
 				data = JSON.parse(data.response);
 				console.log(data);
 				Transparency.render(qwery('[data-bind=rankingData]')[0], data.objects, APP.directives.ranking(data.objects));
