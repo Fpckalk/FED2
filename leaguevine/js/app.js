@@ -48,12 +48,10 @@ var APP = APP || {};
 			document.getElementById("loader").className = "loading";
 			
 			request.onreadystatechange = function() {
-				if (request.readyState == 4) {
-					if (request.status == 200) {
-						document.getElementById("loader").className = "";
-						success(request);
-						APP.controller.loadEnable();
-					}
+				if (request.readyState == 4 && request.status == 200) {
+					document.getElementById("loader").className = "";
+					success(request);
+					APP.controller.loadEnable();
 				}
 			}
 
@@ -64,7 +62,7 @@ var APP = APP || {};
 		xmlPost: function(method, url, params, success) {
 
 			var request = new XMLHttpRequest;
-			var params = "game_id=127164&team_1_score=1&team_2_score=2&is_final=false";
+			var params = JSON.stringify(params);
 
 			request.open(method, url, true);
 			if (method === 'POST') {
@@ -85,13 +83,14 @@ var APP = APP || {};
 		},
 
 		update: function() {
-			this.preventDefault;
 
-			console.log(this.innerHTML);
 			var params = {
-
+				"game_id":"127164",
+				"team_1_score":"1",
+				"team_2_score":"2",
+				"is_final":"false"
 			}
-			xmlPost('POST', 'https://api.leaguevine.com/v1/game_scores/', params, function() {
+			APP.request.xmlPost('POST', 'https://api.leaguevine.com/v1/game_scores/', params, function() {
 				console.log('Post succesful!');
 			})
 
