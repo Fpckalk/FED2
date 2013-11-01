@@ -21,13 +21,15 @@ var APP = APP || {};
 	APP.controller = {
 		init: function() {
 			APP.router.init();
-			this.enable();
 		},
 
-		// Event handlers
-		enable: function() {
-			var el = qwery('[data-type=submit]')[0];
-			el.addEventListener('click', APP.request.update, false);
+		// Event handlers after loading a request is done
+		loadEnable: function() {
+			var el = qwery('[data-type=submit]');
+			for (var i = 0; i < el.length; i++) {
+				console.log(el[i]);
+				el[i].addEventListener('click', APP.request.update, false);
+			};
 		}
 
 	};
@@ -41,7 +43,6 @@ var APP = APP || {};
 			var request = new XMLHttpRequest;
 
 			request.open(method, file);
-
 			// The headers should be set after open()
 			// due to an anomaly in Gecko
 			if (method === "POST") {
@@ -51,7 +52,6 @@ var APP = APP || {};
 					false
 				);				
 			}
-
 			request.send(null);
 
 			document.getElementById("loader").className = "loading";
@@ -61,6 +61,7 @@ var APP = APP || {};
 					if (request.status == 200) {
 						document.getElementById("loader").className = "";
 						success(request);
+						APP.controller.loadEnable();
 					}
 				}
 			}
@@ -70,7 +71,7 @@ var APP = APP || {};
 
 		update: function() {
 
-			console.log('test');
+			console.log(this.innerHTML);
 
 		}
 
