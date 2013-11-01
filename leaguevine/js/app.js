@@ -27,7 +27,6 @@ var APP = APP || {};
 		loadEnable: function() {
 			var el = qwery('[data-type=submit]');
 			for (var i = 0; i < el.length; i++) {
-				console.log(el[i]);
 				el[i].addEventListener('click', APP.request.update, false);
 			};
 		}
@@ -83,15 +82,17 @@ var APP = APP || {};
 		},
 
 		update: function() {
-
+			var score_1 = qwery('[data-bind=score_1]', this.parentNode)[0];
+			var score_2 = qwery('[data-bind=score_2]', this.parentNode)[0];
 			var params = {
 				"game_id":"127164",
-				"team_1_score":"1",
-				"team_2_score":"2",
-				"is_final":"false"
+				"team_1_score":score_1.value,
+				"team_2_score":score_2.value,
+				"is_final":"false" // Standard procedure
 			}
+
 			APP.request.xmlPost('POST', 'https://api.leaguevine.com/v1/game_scores/', params, function() {
-				console.log('Post succesful!');
+				// Succesful post
 			})
 
 		}
@@ -224,7 +225,7 @@ var APP = APP || {};
 			return {
 				start_time: {
 					text: function() {
-						var date = this.start_time.split("T");
+						var date = this.start_time.split(/[T+]+/);
 						return date[1];
 					}
 				},
