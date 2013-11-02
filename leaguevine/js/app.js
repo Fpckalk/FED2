@@ -24,14 +24,24 @@ var APP = APP || {};
 		},
 
 		// Event handlers after loading a request is done
-		loadEnable: function() {
+		loadEnable: function(data) {
 			var el = qwery('[data-type=submit]');
 			for (var i = 0; i < el.length; i++) {
-				el[i].addEventListener('click', APP.request.update, false);
+				el[i].addEventListener('click', function() { APP.request.update(data, event); }, false);
 			};
 		}
 
 	};
+
+	APP.miscHacks = {
+
+		elemIndex: function(elem) {
+			var  i = 0;
+			while((elem = elem.previousSibling) != null) i++;
+			return i;
+		}
+
+	}
 
 
 	APP.request = {
@@ -50,7 +60,7 @@ var APP = APP || {};
 				if (request.readyState == 4 && request.status == 200) {
 					document.getElementById("loader").className = "";
 					success(request);
-					APP.controller.loadEnable();
+					APP.controller.loadEnable(request.response); // Giving the data to the loadEnabler. Just to be nice.
 				}
 			}
 
@@ -58,43 +68,45 @@ var APP = APP || {};
 
 		// Divided these two bad boys
 		// Optional parameters would get a tad too confusing
-		xmlPost: function(method, url, params, success) {
+		xmlPost: function(method, url, params) {
 
 			var request = new XMLHttpRequest;
 			var params = JSON.stringify(params);
 
 			request.open(method, url, true);
-			if (method === 'POST') {
-				request.setRequestHeader("Content-Type", "application/json", false);				
-				request.setRequestHeader("Accept", "application/json", false);
-				request.setRequestHeader("Authorization", "bearer 248cf621f6", false);
-			}
+			request.setRequestHeader("Content-Type", "application/json", false);				
+			request.setRequestHeader("Accept", "application/json", false);
+			request.setRequestHeader("Authorization", "bearer 248cf621f6", false);
 			request.send(params);
 
 			document.getElementById("loader").className = "loading";
 
 			request.onreadystatechange = function() {
-				if(request.readyState == 4 && request.status == 200) {
+				if(request.readyState == 4 && request.status == 201) {
 					document.getElementById("loader").className = "";
-					succes(request);
 				}
 			}
 		},
 
-		update: function() {
-			var score_1 = qwery('[data-bind=score_1]', this.parentNode)[0];
-			var score_2 = qwery('[data-bind=score_2]', this.parentNode)[0];
+		update: function(data, e) {
+
+			// All I wanted was to get the index
+			// I am sorry it had to be this way
+			var elem = e.target.parentNode.parentNode.parentNode;
+			var index = Math.floor(APP.miscHacks.elemIndex(elem) / 3);
+
+			var data = JSON.parse(data),
+				game_id = data.objects[index].id,
+				score_1 = qwery('[data-bind=score_1]', this.parentNode)[index].value,
+				score_2 = qwery('[data-bind=score_2]', this.parentNode)[index].value;
+
 			var params = {
-				"game_id":"127164",
-				"team_1_score":score_1.value,
-				"team_2_score":score_2.value,
+				"game_id" : game_id,
+				"team_1_score" : score_1,
+				"team_2_score" : score_2,
 				"is_final":"false" // Standard procedure
 			}
-
-			APP.request.xmlPost('POST', 'https://api.leaguevine.com/v1/game_scores/', params, function() {
-				// Succesful post
-			})
-
+			APP.request.xmlPost('POST', 'https://api.leaguevine.com/v1/game_scores/', params);
 		}
 
 	};
@@ -148,10 +160,6 @@ var APP = APP || {};
 
 				'/game': function() {
 					APP.page.game();
-				},
-
-				'/movies': function() {
-					APP.page.movies();
 				},
 
 				'*': function() {
