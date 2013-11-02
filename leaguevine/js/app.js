@@ -21,6 +21,12 @@ var APP = APP || {};
 	APP.controller = {
 		init: function() {
 			APP.router.init();
+			this.enable();
+		},
+
+		enable: function() {
+			var el = qwery('body')[0];
+			Hammer(el).on('swipedown', APP.page.schedule);
 		},
 
 		// Event handlers after loading a request is done
@@ -33,6 +39,7 @@ var APP = APP || {};
 
 	};
 
+
 	APP.miscHacks = {
 
 		elemIndex: function(elem) {
@@ -41,7 +48,7 @@ var APP = APP || {};
 			return i;
 		}
 
-	}
+	};
 
 
 	APP.request = {
