@@ -25,8 +25,25 @@ var APP = APP || {};
 		},
 
 		enable: function() {
-			var el = qwery('body')[0];
-			Hammer(el).on('swipedown', APP.page.schedule);
+
+			var	el = qwery('body')[0],
+				route = window.location.hash.slice(2);
+				
+				Hammer(el).on('dragdown', function() { APP.animation.dragDown(event); });
+				Hammer(el).on('dragend', function() { APP.animation.dragEnd(); });
+
+			switch(route) {
+				case "schedule":
+					Hammer(el).on('swipedown', APP.page.schedule);
+					break;
+				case "game":
+					Hammer(el).on('swipedown', APP.page.game);
+					break;
+				case "ranking":
+					Hammer(el).on('swipedown', APP.page.ranking);
+					break;
+			}
+			
 		},
 
 		// Event handlers after loading a request is done
@@ -40,7 +57,7 @@ var APP = APP || {};
 	};
 
 
-	APP.miscHacks = {
+	APP.toolkit = {
 
 		elemIndex: function(elem) {
 			var  i = 0;
@@ -49,6 +66,31 @@ var APP = APP || {};
 		}
 
 	};
+
+	APP.animation = {
+
+		dragDown: function(e) {
+			var dis = e.gesture.distance,
+				route = window.location.hash.slice(2),
+				el = qwery('[data-route=' + route + ']')[0];
+
+			el.className = "active";
+			el.style.marginTop = dis + "px";
+			if(dis >= 150) {
+				el.className = "active off";
+				el.style.marginTop = "0px";
+			}
+		},
+
+		dragEnd: function() {
+			var	route = window.location.hash.slice(2),
+				el = qwery('[data-route=' + route + ']')[0];
+
+			el.className = "active off";
+			el.style.marginTop = "0px";
+		}
+
+	}
 
 
 	APP.request = {
@@ -100,7 +142,7 @@ var APP = APP || {};
 			// All I wanted was to get the index
 			// I am sorry it had to be this way
 			var elem = e.target.parentNode.parentNode.parentNode;
-			var index = Math.floor(APP.miscHacks.elemIndex(elem) / 3);
+			var index = Math.floor(APP.toolkit.elemIndex(elem) / 3);
 
 			var data = JSON.parse(data),
 				game_id = data.objects[index].id,
@@ -180,14 +222,18 @@ var APP = APP || {};
 
             var route = window.location.hash.slice(2),
             	articles = qwery('article[data-route]'),
-            	article = qwery('[data-route=' + route + ']')[0];  
+            	article = qwery('[data-route=' + route + ']')[0],
+            	navItems = qwery('a[data-nav]'),
+            	navItem = qwery('[data-nav=' + route + ']')[0];
 
             // Show active article, hide all other
             if (article) {
             	for (var i=0; i < articles.length; i++){
             		articles[i].classList.remove('active');
+            		navItems[i].classList.remove('active');
             	}
             	article.classList.add('active');
+            	navItem.classList.add('active');
 			}
 
 			// Default route
@@ -232,7 +278,7 @@ var APP = APP || {};
 
 	};
 
-	// All the thanks go to Joost Faber
+	// All the thanks go to Joost "Josie" Faber
 	// https://github.com/joostf
 	APP.directives = {
 

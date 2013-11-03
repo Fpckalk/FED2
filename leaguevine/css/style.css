@@ -34,8 +34,11 @@ nav ul li a {
 	line-height: 60px;
 	font-family: sans-serif;
 }
+	nav ul li a.active {
+		background-color: #c00000;
+	}
 	nav ul li a:hover {
-		background-color: #e60000;
+		background-color: #c00000;
 	}
 
 
@@ -69,6 +72,10 @@ nav ul li a {
 article {
 	padding: 20px;
 	display: inline-block;
+}
+
+article.off {
+	transition: .4s;
 }
 
 /* Table styles */
