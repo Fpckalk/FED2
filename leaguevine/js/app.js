@@ -30,19 +30,7 @@ var APP = APP || {};
 				route = window.location.hash.slice(2);
 				
 				Hammer(el).on('dragdown', function() { APP.animation.dragDown(event); });
-				Hammer(el).on('dragend', function() { APP.animation.dragEnd(); });
-
-			switch(route) {
-				case "schedule":
-					Hammer(el).on('swipedown', APP.page.schedule);
-					break;
-				case "game":
-					Hammer(el).on('swipedown', APP.page.game);
-					break;
-				case "ranking":
-					Hammer(el).on('swipedown', APP.page.ranking);
-					break;
-			}
+				Hammer(el).on('dragend', function() { APP.animation.dragEnd(event); });
 			
 		},
 
@@ -70,6 +58,7 @@ var APP = APP || {};
 	APP.animation = {
 
 		dragDown: function(e) {
+			e.gesture.preventDefault();
 			var dis = e.gesture.distance,
 				route = window.location.hash.slice(2),
 				el = qwery('[data-route=' + route + ']')[0];
@@ -82,12 +71,17 @@ var APP = APP || {};
 			}
 		},
 
-		dragEnd: function() {
-			var	route = window.location.hash.slice(2),
+		dragEnd: function(e) {
+			var	dis = e.gesture.distance,
+				route = window.location.hash.slice(2),
 				el = qwery('[data-route=' + route + ']')[0];
 
-			el.className = "active off";
-			el.style.marginTop = "0px";
+			if(dis <= 150) {
+				el.className = "active off";
+				el.style.marginTop = "0px";
+			} else {
+				APP.page[route]();
+			}
 		}
 
 	}
