@@ -27,31 +27,30 @@
 	<article data-route="schedule">
 
 		<section>
-			
-			<h1 data-bind="title"></h1>
-			<p data-bind="description"></p>
 
 			<table>
 				<thead>
 					<tr>
 						<th>Monday, October 21st</th>
 						<th>Team</th>
-						<th>Score</th>
 						<th>Team</th>
+						<th>Update score?</th>
 					</tr>
 				</thead>
 				<tbody data-bind="scheduleData">
 					<tr>
-						<td data-bind="start_time"></td>
-						<td data-bind="team_1"></td>
+						<td><span data-bind="start_time"></td>
 						<td>
-							<form>
-								<input inputmode="numeric" type="text" data-bind="score_1" placeholder="">
-								<input inputmode="numeric" type="text" data-bind="score_2" placeholder="">
-								<button data-type="submit" type="button">Submit</button>
-							</form>
+							<span data-bind="team_1"></span>
+							<input inputmode="numeric" type="number" data-bind="score_1" placeholder="">
 						</td>
-						<td data-bind="team_2"></td>
+						<td>
+							<span data-bind="team_2"></span>
+							<input inputmode="numeric" type="number" data-bind="score_2" placeholder="">
+						</td>
+						<td>
+							<button data-type="submit" type="button">Update</button>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -64,8 +63,6 @@
 
 		<section>
 			
-			<h1 data-bind="title"></h1>	
-			<p data-bind="description"></p>
 			<table>				
 				<thead>
 					<tr>
@@ -90,19 +87,16 @@
 	<article data-route="ranking">
 
 		<section>
-			
-			<h1 data-bind="title"></h1>	
-			<p data-bind="description"></p>
 
 			<table>
-				<theader>
+				<thead>
 					<tr>
 						<th>Team</th>
 	                    <th>W</th>
 	                    <th>L</th>
 	                    <th>+/-</th>
 					</tr>
-				</theader>
+				</thead>
 				<tbody data-bind="rankingData">
 					<tr>
 						<td data-bind="name"></td>

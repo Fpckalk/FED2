@@ -2,7 +2,7 @@
 body {
 	font-family: sans-serif;
 	background: url('../img/bg.jpg') 0 0 no-repeat fixed;
-	background-size: 100%;
+	background-size: 100% 100%;
 }
 h1 {
 	font-size: 3em;
@@ -72,10 +72,13 @@ nav ul li a {
 article {
 	padding: 20px;
 	display: inline-block;
+	font-size: .85em;
 }
 
 article.off {
-	transition: .4s;
+	-moz-transition: .4s;
+	-webkit-transition: .4s;
+	-o-transition: .4s;
 }
 
 /* Table styles */
@@ -85,10 +88,60 @@ table, th, td {
 
 th {
 	padding-right: 40px;
+	font-weight: bold;
+	font-size: 1.2em;
+	color: #333333;
+	max-width: 125px;
+}
+
+tbody:before {
+	line-height: 20px;
+	content: "-";
+	visibility: hidden;
+	display: block;
+}
+
+article:not(:first-of-type) tbody > td {
+	padding: 20px 0;
+}
+
+tbody > tr {
+	border-bottom: 1px solid #ddd;
+}
+thead tr th:first-child {
+	width: 85px;
+	padding-right: 25px;
+}
+
+thead tr th:last-child {
+	padding-right: 0;
+	max-width: 60px;
 }
 
 td {
-	padding: 10px 50px 10px 0;
+	padding: 20px 15px 20px 0;
+	max-width: 125px;
+}
+
+tbody td:last-child {
+	padding-right: 0;
+}
+
+td span {
+	display: block;
+	margin-bottom: 5px;
+}
+
+input[type=number] {
+	width: 40px;
+	height: 25px;
+	border-radius: 2px;
+	border: 1px solid #999;
+	text-align: center;
+}
+
+button {
+	height: 30px;
 }
 
 article {

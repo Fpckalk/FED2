@@ -57,6 +57,9 @@ var APP = APP || {};
 	APP.animation = {
 
 		dragDown: function(e) {
+			var offset = window.pageYOffset;
+			if(offset != 0) return;
+
 			e.gesture.preventDefault();
 			var dis = e.gesture.distance,
 				main = 'schedule',
@@ -75,6 +78,10 @@ var APP = APP || {};
 		// Checks to see if an animation should occur
 		// or if there should be a refresh
 		dragEnd: function(e) {
+			var offset = window.pageYOffset;
+			if(offset != 0) return;
+
+			e.gesture.preventDefault();
 			var	dis = e.gesture.distance,
 				main = 'schedule',
 				route = window.location.hash.slice(2),
@@ -159,35 +166,8 @@ var APP = APP || {};
 			}
 
 			APP.request.xmlPost('POST', 'https://api.leaguevine.com/v1/game_scores/', params);
-			
+
 		}
-
-	};
-
-
-	// Apply data to the different 'pages'
-	// The rest of these can be found under the directives
-	// Which are located near the bottom of this script
-	APP.schedule = {
-
-		title: 'Pool A - Schedule',
-		description: 'This is the schedule.'
-
-	};
-
-
-	APP.game = {
-
-		title: 'Game',
-		description: 'This is the game.'
-
-	};
-
-
-	APP.ranking = {
-
-		title: 'Pool A - Ranking',
-		description: 'This is the ranking.'
 
 	};
 
