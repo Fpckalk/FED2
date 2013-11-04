@@ -1,7 +1,5 @@
 /*
 
-A basic framework skeleton
-
 Leaguevine access token: 248cf621f6
 Tournament ID: 19389
 
@@ -15,9 +13,8 @@ var APP = APP || {};
 
 (function() {
 
-	/* Initiate all the functions you want to start when
-	 * everything has finished loading.
-	*/
+	// Initiate all the functions you want to start when
+	// everything has finished loading.
 	APP.controller = {
 		init: function() {
 			APP.router.init();
@@ -35,6 +32,7 @@ var APP = APP || {};
 		},
 
 		// Event handlers after loading a request is done
+		// Gets called in the XHR GET
 		loadEnable: function(data) {
 			var el = qwery('[data-type=submit]');
 			for (var i = 0; i < el.length; i++) {
@@ -44,7 +42,7 @@ var APP = APP || {};
 
 	};
 
-
+	// Small things I needed
 	APP.toolkit = {
 
 		elemIndex: function(elem) {
@@ -55,12 +53,15 @@ var APP = APP || {};
 
 	};
 
+	// Animations and their functions
 	APP.animation = {
 
 		dragDown: function(e) {
 			e.gesture.preventDefault();
 			var dis = e.gesture.distance,
+				main = 'schedule',
 				route = window.location.hash.slice(2),
+				route = (route) ? route : main, // Checking whether the route actually has a path
 				el = qwery('[data-route=' + route + ']')[0];
 
 			el.className = "active";
@@ -71,9 +72,13 @@ var APP = APP || {};
 			}
 		},
 
+		// Checks to see if an animation should occur
+		// or if there should be a refresh
 		dragEnd: function(e) {
 			var	dis = e.gesture.distance,
+				main = 'schedule',
 				route = window.location.hash.slice(2),
+				route = (route) ? route : main, // Checking whether the route actually has a path
 				el = qwery('[data-route=' + route + ']')[0];
 
 			if(dis <= 150) {
@@ -89,7 +94,8 @@ var APP = APP || {};
 
 	APP.request = {
 
-		// Request any xml type file by passing up the method and file you're looking for
+		// Request any xml type file by passing
+		// up the method and file you're looking for
 		xmlGet: function(file, success) {
 
 			var request = new XMLHttpRequest;
@@ -131,6 +137,8 @@ var APP = APP || {};
 			}
 		},
 
+		// This is to update the scores and
+		// send them over to Leaguevine
 		update: function(data, e) {
 
 			// All I wanted was to get the index
@@ -149,7 +157,9 @@ var APP = APP || {};
 				"team_2_score" : score_2,
 				"is_final":"false" // Standard procedure
 			}
+
 			APP.request.xmlPost('POST', 'https://api.leaguevine.com/v1/game_scores/', params);
+			
 		}
 
 	};
@@ -158,7 +168,6 @@ var APP = APP || {};
 	// Apply data to the different 'pages'
 	// The rest of these can be found under the directives
 	// Which are located near the bottom of this script
-
 	APP.schedule = {
 
 		title: 'Pool A - Schedule',
@@ -186,10 +195,9 @@ var APP = APP || {};
 	// ROUTIE
 	APP.router = {
 
-		/* The functionality of Routie lies in that it can differentiate links
-		 * and add functions to the links called.
-		 * Thus you can 'switch' pages without using another request.
-		*/
+		// The functionality of Routie lies in that it can differentiate links
+		// and add functions to the links called.
+		// Thus you can 'switch' pages without using another request.
 		init: function() {
 			routie({
 
@@ -212,6 +220,7 @@ var APP = APP || {};
 			});
 		},
 
+		// Checks whether the current 'page' should be active
 		change: function () {
 
             var route = window.location.hash.slice(2),
@@ -240,7 +249,8 @@ var APP = APP || {};
 	};
 
 
-	// Page
+	// Gets the data and then renders
+	// it to a data-bind
 	APP.page = {
 
 		schedule: function() {
@@ -272,8 +282,12 @@ var APP = APP || {};
 
 	};
 
+
 	// All the thanks go to Joost "Josie" Faber
 	// https://github.com/joostf
+
+	// After data has been received it goes through here
+	// so it can use functions on elements
 	APP.directives = {
 
 		schedule: function(data) {
@@ -340,7 +354,7 @@ var APP = APP || {};
 	}
 
 
-	////////////////////// This is a well commented line
+	// All is ready, let's get this show on the road
 	domready(function() {
 		APP.controller.init();
 	});
